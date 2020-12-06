@@ -80,7 +80,7 @@ class RNN(Disaggregator):
                     filepath = 'RNN-temp-weights-'+str(random.randint(0,100000))+'.h5'
                     checkpoint = ModelCheckpoint(filepath,monitor='val_loss',verbose=1,save_best_only=True,mode='min')
                     model.fit(
-                            train_x, train_y,
+                            train_main, power,
                             validation_split=.15,
                             epochs=self.n_epochs,
                             batch_size=self.batch_size,
